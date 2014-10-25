@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "name": "wikipedia-gather",
+  "version": "0.1.0",
+  "author": "Simon Lydell",
+  "dependencies": {
+    "cheerio": "~0.14.0",
+    "limited-parallel-loop": "0.0.1",
+    "progress": "^1.1.8"
+  }
+}
