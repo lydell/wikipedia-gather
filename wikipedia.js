@@ -14,7 +14,7 @@
 // Lastly you can pass a different URL to wikipedia’s random page. For example,
 // to download Swedish articles:
 //
-//     node wikipedia wiki/sv 5 2 http://sv.wikipedia.org/wiki/Special:Slumpsida
+//     node wikipedia wiki/sv 5 2 https://sv.wikipedia.org/wiki/Special:Slumpsida
 //
 // Note that you have to run `npm install` before executing this script in order
 // to get all dependencies first!
@@ -22,15 +22,15 @@
 var DIR   = process.argv[2] || "."
 var TIMES = Number(process.argv[3]) || 1
 var LIMIT = Number(process.argv[4]) || 20
-var URL   = process.argv[5] || "http://en.wikipedia.org/wiki/Special:Random"
+var URL   = process.argv[5] || "https://en.wikipedia.org/wiki/Special:Random"
 
 var fs          = require("fs")
 var path        = require("path")
-var http        = require("http")
+var https       = require("https")
 var timesLimit  = require("limited-parallel-loop")
 var ProgressBar = require("progress")
 
-var REGEX = /^http:\/\/[a-z]+\.wikipedia\.org\/wiki\/(.+)$/
+var REGEX = /^https:\/\/[a-z]+\.wikipedia\.org\/wiki\/(.+)$/
 var ESCAPED_SLASH = encodeURIComponent("/")
 
 
@@ -88,7 +88,7 @@ timesLimit(TIMES, LIMIT, function(done) {
 
 
 function get(url, statusCode, callback, errback) {
-  http.get(url, function(response) {
+  https.get(url, function(response) {
     if (response.statusCode !== statusCode) {
       return errback(url, new Error(
         "Bad status code: Expected " + statusCode + " but got " +
