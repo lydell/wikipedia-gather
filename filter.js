@@ -5,7 +5,7 @@ var cheerio = require("cheerio")
 
 module.exports = function filter(text) {
     var $ = cheerio.load(text)
-    var $content = $("#mw-content-text")
+    var $content = $(".mw-parser-output")
       .children([
         "p",
         "blockquote",
