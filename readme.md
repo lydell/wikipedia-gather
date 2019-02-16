@@ -13,4 +13,6 @@ Wikipedia articles were chosen, since:
 Under [releases] you can find a 13MB English text corpus made from 5000
 wikipedia articles available for download!
 
+All files are in the public domain.
+
 [releases]: https://github.com/lydell/wikipedia-gather/releases
