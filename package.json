@@ -4,8 +4,8 @@
   "version": "0.1.0",
   "author": "Simon Lydell",
   "dependencies": {
-    "cheerio": "~0.14.0",
+    "cheerio": "^1.0.0-rc.2",
     "limited-parallel-loop": "0.0.1",
-    "progress": "^1.1.8"
+    "progress": "^2.0.3"
   }
 }
